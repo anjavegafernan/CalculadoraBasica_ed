@@ -27,7 +27,6 @@ import java.util.Scanner;
                 System.out.println("Error! Operación no reconocida");
                 err  = true;
             }
-
             if (!err) {
                 System.out.println(num1 + " " + ope + " " + num2 + "=" + result);
             }
