@@ -18,15 +18,20 @@ import java.util.Scanner;
             float result = 0;
             boolean err = false;
 
-//sumas y restas:
+//multiplicación y división
             if (ope == '+' ) {
                 result = num1 + num2;
             } else if (ope == '-') {
                 result = num1 - num2;
+            } else if (ope == '*') {
+                result = num1 * num2;
+            } else if (ope == '/') {
+                result = num1 / num2;
             }else {
                 System.out.println("Error! Operación no reconocida");
                 err  = true;
             }
+
             if (!err) {
                 System.out.println(num1 + " " + ope + " " + num2 + "=" + result);
             }
