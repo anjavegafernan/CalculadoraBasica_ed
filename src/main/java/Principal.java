@@ -18,9 +18,9 @@ import java.util.Scanner;
             float result = 0;
             boolean err = false;
             float MCM = 0;
-            float MCD = 0;
 
-//Suma, resta, multiplicación, división, MDM y MCD
+
+//Suma, resta, multiplicación, división
             if (ope == '+' ) {
                 result = num1 + num2;
             } else if (ope == '-') {
@@ -29,10 +29,6 @@ import java.util.Scanner;
                 result = num1 * num2;
             } else if (ope == '/') {
                 result = num1 / num2;
-            } else if (ope == 'd') {
-                result= MCD/(num1) + MCD/(num2);
-            } else if (ope == 'm') {
-                result = (num1 * num2);
             }else {
                 System.out.println("Error! Operación no reconocida");
                 err  = true;
