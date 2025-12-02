@@ -40,6 +40,5 @@ import java.util.Scanner;
             if (!err) {
                 System.out.println(num1 + " " + ope + " " + num2 + "=" + result);
             }
-
         }
     }
