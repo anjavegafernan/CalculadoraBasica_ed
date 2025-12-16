@@ -1,39 +1,48 @@
 
 import java.util.Scanner;
 
-    public class Principal {
+public class Principal {
 
-        public static void main(String[] args) {
+    public static void main(String[] args) {
 
-            // creo la variable que me permite recibir datos por teclado
-            Scanner entrada = new Scanner(System.in);
+        Scanner entrada = new Scanner(System.in);
 
+        System.out.print("Introduce el primer número: ");
+        double num1 = entrada.nextDouble();
 
-            System.out.print("Introduce el primer número: ");
-            float num1 =entrada.nextFloat();
-            System.out.print("Introduce el segundo número: ");
-            float num2 =entrada.nextFloat();
-            System.out.print("Elije la operación a realizar (+ - * / ): ");
-            char ope = entrada.next().charAt(0);
-            float result = 0;
-            boolean err = false;
+        System.out.print("Introduce el segundo número: ");
+        double num2 = entrada.nextDouble();
 
-//multiplicación y división
-            if (ope == '+' ) {
+        System.out.print("Elige la operación a realizar (+ - * /): ");
+        char ope = entrada.next().charAt(0);
+
+        double result;
+
+        switch (ope) {
+            case '+':
                 result = num1 + num2;
-            } else if (ope == '-') {
+                System.out.printf("%.2f + %.2f = %.2f%n", num1, num2, result);
+                break;
+            case '-':
                 result = num1 - num2;
-            } else if (ope == '*') {
+                System.out.printf("%.2f - %.2f = %.2f%n", num1, num2, result);
+                break;
+            case '*':
                 result = num1 * num2;
-            } else if (ope == '/') {
-                result = num1 / num2;
-            }else {
-                System.out.println("Error! Operación no reconocida");
-                err  = true;
-            }
-
-            if (!err) {
-                System.out.println(num1 + " " + ope + " " + num2 + "=" + result);
-            }
+                System.out.printf("%.2f * %.2f = %.2f%n", num1, num2, result);
+                break;
+            case '/':
+                if (num2 == 0) {
+                    System.out.println("Error: no se puede dividir entre 0.");
+                } else {
+                    result = num1 / num2;
+                    System.out.printf("%.2f / %.2f = %.2f%n", num1, num2, result);
+                }
+                break;
+            default:
+                System.out.println("Operación no válida. Debe ser +, -, * o /.");
         }
+
+        entrada.close();
     }
+}
