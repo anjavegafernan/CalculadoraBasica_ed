@@ -1,13 +1,26 @@
 
 import java.util.Scanner;
 
-    public class Principal {
+public class Principal {
 
-        public static void main(String[] args) {
+    public static void main(String[] args) {
 
-            // creo la variable que me permite recibir datos por teclado
-            Scanner entrada = new Scanner(System.in);
+        Scanner entrada = new Scanner(System.in);
 
+        System.out.print("Introduce el primer número: ");
+        double num1 = entrada.nextDouble();
+
+
+        System.out.print("Introduce el segundo número: ");
+        double num2 = entrada.nextDouble();
+
+        System.out.print("Elige la operación a realizar (+ - * /): ");
+        char ope = entrada.next().charAt(0);
+
+        double result;
+
+        switch (ope) {
+            case '+':
 
             System.out.print("Introduce el primer número: ");
             float num1 =entrada.nextFloat();
@@ -22,11 +35,30 @@ import java.util.Scanner;
 
 //Suma, resta, multiplicación, división
             if (ope == '+' ) {
+
                 result = num1 + num2;
-            } else if (ope == '-') {
+                System.out.printf("%.2f + %.2f = %.2f%n", num1, num2, result);
+                break;
+            case '-':
                 result = num1 - num2;
-            } else if (ope == '*') {
+                System.out.printf("%.2f - %.2f = %.2f%n", num1, num2, result);
+                break;
+            case '*':
                 result = num1 * num2;
+
+                System.out.printf("%.2f * %.2f = %.2f%n", num1, num2, result);
+                break;
+            case '/':
+                if (num2 == 0) {
+                    System.out.println("Error: no se puede dividir entre 0.");
+                } else {
+                    result = num1 / num2;
+                    System.out.printf("%.2f / %.2f = %.2f%n", num1, num2, result);
+                }
+                break;
+            default:
+                System.out.println("Operación no válida. Debe ser +, -, * o /.");
+
             } else if (ope == '/') {
                 result = num1 / num2;
             }else {
@@ -36,5 +68,9 @@ import java.util.Scanner;
             if (!err) {
                 System.out.println(num1 + " " + ope + " " + num2 + "=" + result);
             }
+
         }
+
+        entrada.close();
     }
+}
